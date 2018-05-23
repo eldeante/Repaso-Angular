@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- USAMOS EL MÓDULO MyFirstApp CREADO EN EL ARCHIVO CONTROLLER.JS-->
+
+<html ng-app="MyFirstApp">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>APLICACIONES ANGULAR</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<script src="controller.js"></script>
+
+</head>
+
+<!-- USAMOS EL CONTROLADOR MyFirstController CREADO EN EL ARCHIVO CONTROLLER.JS TENIENDO ASÍ EL BLOQUE AL QUE LE HEMOS PUESTO LA ETIQUETA ACCESO A TODOS LOS ATRIBUTOS DE LA VARIABLE $SCOPE-->
+
+<body ng-controller="MyFirstController">
+
+{{"Hola " + nombre + " que vives en esta dirección: " + direccion }}
+
+</body>
+
+</html>

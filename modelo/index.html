@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- USAMOS EL MÓDULO MyFirstApp CREADO EN EL ARCHIVO CONTROLLER.JS-->
+
+<html ng-app="MyFirstApp">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>APLICACIONES ANGULAR</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<script src="controller.js"></script>
+
+</head>
+
+<!-- USAMOS EL CONTROLADOR MyFirstController CREADO EN EL ARCHIVO CONTROLLER.JS TENIENDO ASÍ EL BLOQUE AL QUE LE HEMOS PUESTO LA ETIQUETA ACCESO A TODOS LOS ATRIBUTOS DE LA VARIABLE $SCOPE-->
+
+<body ng-controller="MyFirstController">
+
+<!-- NG-MODEL SINCRONIZA EL VALOR DEL ATRIBUTO QUE TENEMOS EN NUESTRA VARIABLE $SCOPE SOBRE EL ELEMENTO QUE HEMOS INDICADO-->
+
+<input type="text" ng-model="nombre"/>
+<input type="text" ng-model="direccion"/>
+
+{{"Hola " + nombre + " que vives en esta dirección: " + direccion }}
+
+<h1>COMENTARIOS</h1>
+
+<ul>
+
+<!-- NG-REPEAT HACE QUE PODAMOS RECORRER UN ARRAY CON TODOS SUS VALORES QUE TENGAMOS COMO ATRIBUTO DE LA VARIABLE $SCOPE-->
+	
+	<li ng-repeat="comentarios in comentarios">
+    
+		{{ comentarios.comentario }} - <strong>{{ comentarios.username }}</strong>
+    
+    </li>
+
+</ul>
+
+<h1>AGREGAR COMENTARIOS</h1>
+
+<input type="text" ng-model="nuevoComentario.comentario"/>
+<br />
+<input type="text" ng-model="nuevoComentario.username"/>
+<br />
+
+<!-- NG-CLICK MANDA LLAMAR A LA FUNCIÓN QUE LE ASIGNEMOS CUANDO HACEMOS PULSAMOS EL BOTÓN-->
+
+<button ng-click="agregarComentario()">Agregar Comentario</button>
+
+</body>
+
+</html>
